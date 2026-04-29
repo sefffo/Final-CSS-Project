@@ -1,0 +1,179 @@
+/* ============================================
+   index.css — styles for index.html ONLY
+   ============================================ */
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #264653;
+  padding: 16px 40px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e9c46a;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: #2a9d8f;
+}
+
+.nav-links a.active {
+  background-color: #e9c46a;
+  color: #264653;
+  font-weight: bold;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background-color: #2a9d8f;
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-block;
+  background-color: #e9c46a;
+  color: #264653;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #f4a261;
+}
+
+/* ---------- Featured Section ---------- */
+.featured {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.featured h2 {
+  font-size: 1.8rem;
+  color: #264653;
+  margin-bottom: 36px;
+}
+
+/* ---------- Cards (Flexbox) ---------- */
+.cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  color: #264653;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 24px;
+  background-color: #264653;
+  color: #e9c46a;
+  margin-top: 60px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Media Query ---------- */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
