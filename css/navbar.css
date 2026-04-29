@@ -1,0 +1,89 @@
+/* ===================================
+   NAVBAR STYLES  (shared by all pages)
+   Uses: display: flex
+   =================================== */
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;                    /* Flexbox turns the navbar horizontal */
+  justify-content: space-between;   /* Logo on left, links on right */
+  align-items: center;              /* Center items vertically */
+  background-color: #264653;
+  padding: 16px 40px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e9c46a;
+  text-decoration: none;
+}
+
+/* ---------- Nav Links List ---------- */
+.nav-links {
+  display: flex;        /* Links sit side by side */
+  gap: 28px;            /* Space between each link */
+  list-style: none;     /* Remove bullet points */
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: #2a9d8f;
+}
+
+/* Active page link gets highlighted */
+.nav-links a.active {
+  background-color: #e9c46a;
+  color: #264653;
+  font-weight: bold;
+}
+
+/* ---------- Footer (shared) ---------- */
+footer {
+  text-align: center;
+  padding: 24px;
+  background-color: #264653;
+  color: #e9c46a;
+  margin-top: 60px;
+  font-size: 0.95rem;
+}
+
+/* =============================================
+   MEDIA QUERY — Mobile screens (max 600px)
+   On small screens, the navbar stacks vertically
+   ============================================= */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;   /* Stack logo above links */
+    gap: 12px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;          /* Links wrap to next line if needed */
+    justify-content: center;
+    gap: 10px;
+  }
+}

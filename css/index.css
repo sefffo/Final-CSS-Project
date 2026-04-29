@@ -1,0 +1,104 @@
+/* ===================================
+   HOME PAGE STYLES  (index.html)
+   =================================== */
+
+/* ---------- Hero Section ---------- */
+.hero {
+  background-color: #2a9d8f;
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-block;
+  background-color: #e9c46a;
+  color: #264653;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #f4a261;
+}
+
+/* ---------- Featured Section ---------- */
+.featured {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.featured h2 {
+  font-size: 1.8rem;
+  color: #264653;
+  margin-bottom: 36px;
+}
+
+/* ---------- Cards Row (Flexbox) ---------- */
+.cards {
+  display: flex;       /* Cards sit side by side */
+  gap: 24px;           /* Space between cards */
+  justify-content: center;
+  flex-wrap: wrap;     /* Cards wrap on smaller screens */
+}
+
+/* ---------- Single Card ---------- */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);   /* Card lifts up on hover */
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  color: #264653;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ---------- Media Query ---------- */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    width: 100%;   /* Cards go full width on mobile */
+  }
+}
