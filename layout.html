@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BookNest - Layout</title>
+  <title>BookNest - Deals</title>
   <link rel="stylesheet" href="layout.css" />
 </head>
 <body>
@@ -16,82 +16,103 @@
       <li><a href="books.html">Books</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="layout.html" class="active">Layout</a></li>
+      <li><a href="layout.html" class="active">Deals</a></li>
     </ul>
   </nav>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <h1>CSS Grid Layout 🗓️</h1>
-    <p>See how grid-template-areas splits a page into named zones!</p>
+  <!-- PAGE LAYOUT using grid-template-areas -->
+  <div class="page-layout">
+
+    <!-- HEADER area -->
+    <header class="area-header">
+      <h1>🔥 Weekly Deals</h1>
+      <p>Grab your favourite books at special prices this week only!</p>
+    </header>
+
+    <!-- SIDEBAR area -->
+    <aside class="area-sidebar">
+      <h3>Filter by</h3>
+
+      <h4>Category</h4>
+      <ul>
+        <li><a href="#">All Books</a></li>
+        <li><a href="#">🧙 Fantasy</a></li>
+        <li><a href="#">🚀 Science</a></li>
+        <li><a href="#">🔍 Mystery</a></li>
+        <li><a href="#">🌊 Adventure</a></li>
+      </ul>
+
+      <h4>Price</h4>
+      <ul>
+        <li><a href="#">Under $8</a></li>
+        <li><a href="#">$8 — $10</a></li>
+        <li><a href="#">Above $10</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN area -->
+    <main class="area-main">
+
+      <div class="deal-card">
+        <div class="deal-cover" style="background-color: #f4a261;">🧙</div>
+        <div class="deal-info">
+          <h3>The Magic Wand</h3>
+          <p>A young wizard discovers a hidden world beneath the library.</p>
+          <div class="prices">
+            <span class="old-price">$8.99</span>
+            <span class="new-price">$5.99</span>
+          </div>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-cover" style="background-color: #2a9d8f;">🚀</div>
+        <div class="deal-info">
+          <h3>Stars & Beyond</h3>
+          <p>Three kids build a rocket and fly to explore the solar system.</p>
+          <div class="prices">
+            <span class="old-price">$9.50</span>
+            <span class="new-price">$6.50</span>
+          </div>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-cover" style="background-color: #e76f51;">🔍</div>
+        <div class="deal-info">
+          <h3>Mystery Club</h3>
+          <p>Five friends solve the mystery of the missing school trophy.</p>
+          <div class="prices">
+            <span class="old-price">$8.25</span>
+            <span class="new-price">$4.99</span>
+          </div>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-cover" style="background-color: #6a994e;">🌿</div>
+        <div class="deal-info">
+          <h3>The Green Planet</h3>
+          <p>A story about saving the environment, one tree at a time.</p>
+          <div class="prices">
+            <span class="old-price">$7.50</span>
+            <span class="new-price">$4.50</span>
+          </div>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER area -->
+    <footer class="area-footer">
+      <p>© 2025 BookNest. Made with ❤️ for learners.</p>
+    </footer>
+
   </div>
-
-  <!-- EXPLANATION BOX -->
-  <section class="explain-section">
-    <div class="explain-box">
-      <h2>💡 What is grid-template-areas?</h2>
-      <p>
-        With <strong>grid-template-areas</strong> you can give each part of your page
-        a name — like <em>"header"</em>, <em>"sidebar"</em>, <em>"main"</em> and <em>"footer"</em>.
-        Then CSS places every piece exactly where you drew it. It is like drawing
-        a map of your page!
-      </p>
-      <pre class="code-block">
-.page-layout {
-  display: grid;
-  grid-template-areas:
-    "header  header"
-    "sidebar main  "
-    "footer  footer";
-}</pre>
-    </div>
-  </section>
-
-  <!-- LIVE DEMO using grid-template-areas -->
-  <section class="demo-section">
-    <h2>Live Demo — BookNest Store Page</h2>
-    <p class="demo-hint">Each coloured box is a named grid area.</p>
-
-    <div class="page-layout">
-
-      <!-- HEADER area -->
-      <header class="area-header">
-        <h2>📚 BookNest Store</h2>
-        <p>This box is in the <strong>header</strong> area</p>
-      </header>
-
-      <!-- SIDEBAR area -->
-      <aside class="area-sidebar">
-        <h3>Categories</h3>
-        <ul>
-          <li>🧙 Fantasy</li>
-          <li>🚀 Science</li>
-          <li>🔍 Mystery</li>
-          <li>🌊 Adventure</li>
-          <li>🌿 Nature</li>
-        </ul>
-      </aside>
-
-      <!-- MAIN area -->
-      <main class="area-main">
-        <h3>Featured This Week</h3>
-        <p>This is the <strong>main</strong> content area. It takes up the most space on the page because we want readers to focus here.</p>
-        <p>You can put book descriptions, images, or any content inside this area.</p>
-        <div class="featured-badge">⭐ Top Pick: "The Magic Wand"</div>
-      </main>
-
-      <!-- FOOTER area -->
-      <footer class="area-footer">
-        <p>This box is in the <strong>footer</strong> area &mdash; it always stays at the bottom.</p>
-      </footer>
-
-    </div>
-  </section>
-
-  <!-- SITE FOOTER -->
-  <footer class="site-footer">
-    <p>© 2025 BookNest. Made with ❤️ for learners.</p>
-  </footer>
 
 </body>
 </html>
