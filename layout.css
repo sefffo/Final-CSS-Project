@@ -1,0 +1,294 @@
+/* ============================================
+   layout.css — styles for layout.html ONLY
+   This page teaches: grid-template-areas
+   ============================================ */
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #264653;
+  padding: 16px 40px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e9c46a;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: #2a9d8f;
+}
+
+.nav-links a.active {
+  background-color: #e9c46a;
+  color: #264653;
+  font-weight: bold;
+}
+
+/* ---------- Page Header ---------- */
+.page-header {
+  background-color: #264653;
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: #e9c46a;
+}
+
+/* ---------- Explanation Box ---------- */
+.explain-section {
+  max-width: 860px;
+  margin: 50px auto 10px;
+  padding: 0 24px;
+}
+
+.explain-box {
+  background-color: #ffffff;
+  border-left: 5px solid #2a9d8f;
+  border-radius: 10px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.explain-box h2 {
+  font-size: 1.3rem;
+  color: #264653;
+  margin-bottom: 14px;
+}
+
+.explain-box p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Code block styling */
+.code-block {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 20px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-family: 'Courier New', monospace;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* ---------- Demo Section ---------- */
+.demo-section {
+  max-width: 960px;
+  margin: 40px auto 0;
+  padding: 0 24px;
+}
+
+.demo-section h2 {
+  font-size: 1.5rem;
+  color: #264653;
+  margin-bottom: 8px;
+}
+
+.demo-hint {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+/* =============================================
+   THE MAIN LESSON: grid-template-areas
+
+   We split the page into 4 named zones:
+
+   [ header  | header  ]
+   [ sidebar | main    ]
+   [ footer  | footer  ]
+
+   Each child just says which area it belongs to!
+   ============================================= */
+.page-layout {
+  display: grid;
+
+  /* Two columns: sidebar is narrow, main is wide */
+  grid-template-columns: 200px 1fr;
+
+  /* Three rows: auto = as tall as content */
+  grid-template-rows: auto auto auto;
+
+  /* Draw the map of the page using names */
+  grid-template-areas:
+    "header  header"
+    "sidebar main  "
+    "footer  footer";
+
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* Each child says: put me in THIS area */
+.area-header  { grid-area: header; }
+.area-sidebar { grid-area: sidebar; }
+.area-main    { grid-area: main; }
+.area-footer  { grid-area: footer; }
+
+/* ---------- Area Styles (colours help students see the zones) ---------- */
+.area-header {
+  background-color: #264653;
+  color: #ffffff;
+  padding: 24px 28px;
+  border-radius: 10px;
+}
+
+.area-header h2 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.area-header p {
+  font-size: 0.95rem;
+  color: #e9c46a;
+}
+
+.area-sidebar {
+  background-color: #e9f5f4;
+  border: 2px solid #2a9d8f;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.area-sidebar h3 {
+  font-size: 1.05rem;
+  color: #264653;
+  margin-bottom: 14px;
+}
+
+.area-sidebar ul {
+  list-style: none;
+}
+
+.area-sidebar ul li {
+  padding: 8px 0;
+  font-size: 0.95rem;
+  color: #333;
+  border-bottom: 1px solid #c8e6e4;
+}
+
+.area-sidebar ul li:last-child {
+  border-bottom: none;
+}
+
+.area-main {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 24px 28px;
+}
+
+.area-main h3 {
+  font-size: 1.2rem;
+  color: #264653;
+  margin-bottom: 12px;
+}
+
+.area-main p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.featured-badge {
+  display: inline-block;
+  background-color: #e9c46a;
+  color: #264653;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+.area-footer {
+  background-color: #f4a261;
+  color: #264653;
+  text-align: center;
+  padding: 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ---------- Site Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  background-color: #264653;
+  color: #e9c46a;
+  margin-top: 60px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Media Query ---------- */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* On mobile: stack everything into one column */
+  .page-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+}

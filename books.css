@@ -80,10 +80,14 @@ body {
   padding: 0 20px;
 }
 
-/* ---------- Books Grid (Flexbox) ---------- */
-.books-grid {
+/* ---------- Books List (Flexbox) ----------
+   We use flexbox here to place cards side by side.
+   This is different from CSS Grid — we will learn
+   CSS Grid on the Layout page!
+-------------------------------------------- */
+.books-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;    /* cards move to the next row when there is no space */
   gap: 28px;
   justify-content: center;
 }
